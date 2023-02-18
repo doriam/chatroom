@@ -1,0 +1,53 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <div class="discussion data-title">
+      <div class="photo"
+        style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+      </div>
+      <div>
+        <h1>Emilio Doria</h1>
+      </div>
+    </div>
+    <div class="logout">
+      <mat-icon>exit_to_app</mat-icon>
+      <h4>Se déconnecter</h4>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" opened>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let nav of fillerNav">
+
+          <div class="discussion message-active">
+            <div class="photo"
+              style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+              <div class="online"></div>
+            </div>
+            <div class="desc-contact">
+              <p class="name">{{nav.name}}</p>
+              <p class="message"> {{nav.message}}</p>
+            </div>
+            <div class="timer">{{nav.time}}</div>
+          </div>
+
+
+          <!--<div class="photo">{{nav.icon}}</div>
+          <div class="name">{{nav.name}} </div>
+          <div class="message">
+            <span>hola</span>
+          </div>
+          <div class="date">
+            <span>20/02/2012 - 01:10 PM</span>
+          </div>
+        -->
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-conversation></app-conversation>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

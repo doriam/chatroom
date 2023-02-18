@@ -1,0 +1,39 @@
+<!--<router-outlet></router-outlet>-->
+<!--<p *ngFor="let content of fillerContent">{{content}}</p>-->
+<section class="chat">
+  <div class="header-chat">
+
+    <p class="name">Megan Leib</p>
+    <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+  </div>
+  <div class="messages-chat">
+    <div class="message" *ngFor="let content of fillerContent">
+      <p class="text"> {{content.send}}</p>
+
+    </div>
+    <p class="time"> 14h58</p>
+    <!--<div class="message">
+        <p class="text"> What are you doing tonight ? Want to go take a drink ?</p>
+      </div>-->
+    <div class="message text-only" *ngFor="let content of fillerContent">
+      <div class="response">
+        <p class="text"> {{content.response}}</p>
+      </div>
+    </div>
+    <div class="message text-only">
+      <div class="response">
+        <p class="text"> When can we meet ?</p>
+      </div>
+    </div>
+    <p class="response-time time"> 15h04</p>
+    <div class="message">
+      <p class="text"> 9 pm at the bar if possible 😳</p>
+    </div>
+    <p class="time"> 15h09</p>
+  </div>
+  <div class="footer-chat">
+    <i class="icon fa fa-smile-o clickable" style="font-size:25pt;" aria-hidden="true"></i>
+    <input type="text" class="write-message" placeholder="Type your message here">
+    <mat-icon class="icon send fa fa-paper-plane-o clickable" aria-hidden="true">send</mat-icon>
+  </div>
+</section>
